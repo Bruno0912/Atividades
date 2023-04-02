@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<title>Atividades</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="Script/Script02.js"></script>
+	<script src="Script/Script03.js"></script>
+	<script src="Script/Script04.js"></script>
+	<script src="Script/Script06.js"></script>
+</head>
+
+<body>
+
+	<div class="container">
+		<h2>Atividades</h2>
+
+
+		<ul class="nav nav-tabs">
+			<li class="active"><a data-toggle="tab" href="#At1">Atividade 1</a></li>
+			<li><a data-toggle="tab" href="#At2">Atividade 2</a></li>
+			<li><a data-toggle="tab" href="#At3">Atividade 3</a></li>
+			<li><a data-toggle="tab" href="#At4">Atividade 4</a></li>
+			<li><a data-toggle="tab" href="#At5">Atividade 5</a></li>
+			<li><a data-toggle="tab" href="#At6">Atividade 6</a></li>
+		</ul>
+
+		<!-- Conteúdo das abas -->
+		<!------------------------------------------------------------------------------------------->
+		<div class="tab-content">
+			<div id="At1" class="tab-pane fade in active">
+				<h1>números impares </h1>
+				<br>
+				<div id="numeros"></div>
+				<script>
+					let numerosDiv = document.getElementById("numeros");
+					for (let i = 1; i < 100; i += 2) {
+						numerosDiv.innerHTML += "<p>Número " + i + "</p>";
+					}
+				</script>
+
+
+			</div>
+			<!------------------------------------------------------------------------------------------->
+			<div id="At2" class="tab-pane fade">
+				<h1>Tabuada</h1>
+
+				<label for="numero">Digite um número inteiro de 1 a 10:</label>
+				<input type="number" id="numtab" name="numtab" min="1" max="10">
+				<button onclick="calcularTabuada()">Calcular</button>
+
+				<div id="resultado"></div>
+				<script>
+
+				</script>
+			</div>
+			<!------------------------------------------------------------------------------------------->
+			<div id="At3" class="tab-pane fade">
+				<h1>Soma de Números</h1>
+				<button onclick="somarNumeros()">Somar os números de 1 a 1000</button>
+			</div>
+			<!------------------------------------------------------------------------------------------->
+			<div id="At4" class="tab-pane fade">
+				<h1>Sequência de Fibonacci</h1>
+
+				<img src="Img/Fibonacci.jpg" alt="Sequência de Fibonacci">
+
+				<p>Os 10 primeiros números da sequência de Fibonacci são:</p>
+
+				<ul id="fibonacci"></ul>
+
+				<script>start()</script>
+
+			</div>
+			<!------------------------------------------------------------------------------------------->
+			<div id="At5" class="tab-pane fade">
+				<h1>Operaçoes</h1>
+
+				<label for="numero">Digite um número inteiro:</label>
+				<input type="number" id="numero">
+				<button onclick="calcular1()">Calcular</button>
+
+				<script>
+					function calcular1() {
+						var num = parseInt(document.getElementById("numero").value);
+						console.log('valor: ' + num)
+						var raizQuadrada = Math.sqrt(num);
+						var raizCubica = Math.cbrt(num);
+						var potencia = Math.pow(num, 2);
+						alert("Raiz quadrada: " + raizQuadrada + "\nRaiz cúbica: " + raizCubica + "\nPotência de 2: " + potencia);
+					}
+				</script>
+			</div>
+			<!------------------------------------------------------------------------------------------->
+			<div id="At6" class="tab-pane fade">
+
+				<h1>Pessoas.</h1>
+
+				<div>
+					<div>
+						<b>Altura</b>
+						<br>
+						<input type="text" id="txtAltura">
+						<br>
+					</div>
+					<div>
+						<b>Sexo</b>
+						<br>
+						<input type="radio" name="sexo" value="M" id="radioM" checked>M
+						<input type="radio" name="sexo" value="F" id="radioF">F
+					</div>
+					<br>
+					<div>
+						<input type="button" id="botaoInserir" value="INCLUIR" onclick="verificaCampoVazio()">
+						<br><br>
+						<b>Masculino: </b><i id="qtdM">0</i><br>
+						<b>Feminino: </b><i id="qtdF">0</i><br><br>
+					</div>
+					<div>
+						<h1 id="msg"></h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
