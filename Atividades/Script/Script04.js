@@ -1,6 +1,6 @@
 
 function start() {
-    // Função que calcula os primeiros 10 números da sequência de Fibonacci
+    
     function fibonacci() {
         var fib = [0, 1];
         for (var i = 2; i < 11; i++) {
@@ -8,8 +8,7 @@ function start() {
         }
         return fib;
     }
-
-    // Escreve os números da sequência de Fibonacci na página HTML
+    
     var fib = fibonacci();
     var list = document.getElementById("fibonacci");
     for (var i = 1; i < 11; i++) {
